@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# https://github.com/syntaxhighlighter/syntaxhighlighter/issues/428#issuecomment-369230312
-sed -i -e 's/.*Promise = global.Promise.*/Promise = require("bluebird");/' node_modules/songbird/lib/songbird.js
-
-# https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Building#project-setup
-gulp setup-project
-
 # find main brushes / themes repos
 MAIN_BRUSHES=""
 MAIN_THEMES=""

@@ -19,18 +19,25 @@ ENV COMMIT_ID="37724fdb55a4635798993d2d69667e499b62db4b"
 
 RUN node -v \
   && npm -v \
-  && apk --update --no-cache add bzip2 g++ git make python tar \
+  && apk --update --no-cache add \
+    bzip2 git tar \
+  && apk --update --no-cache add -t build-dependencies \
+    g++ make python \
   && git clone https://github.com/syntaxhighlighter/syntaxhighlighter.git \
   && cd syntaxhighlighter \
   && git reset --hard $COMMIT_ID \
   && npm install \
   && npm install -g gulp \
+  && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
 ADD entrypoint.sh /entrypoint.sh
 ADD assets /
 
-RUN chmod a+x /entrypoint.sh
+RUN cd syntaxhighlighter \
+  && sed -i -e 's/.*Promise = global.Promise.*/Promise = require("bluebird");/' node_modules/songbird/lib/songbird.js \
+  && gulp setup-project \
+  && chmod a+x /entrypoint.sh
 
 VOLUME [ "/syntaxhighlighter/dist" ]
 
