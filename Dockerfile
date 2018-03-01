@@ -31,15 +31,15 @@ RUN node -v \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
-ADD entrypoint.sh /entrypoint.sh
+ADD run.sh /run.sh
 ADD assets /
 
 RUN cd syntaxhighlighter \
   && sed -i -e 's/.*Promise = global.Promise.*/Promise = require("bluebird");/' node_modules/songbird/lib/songbird.js \
   && gulp setup-project \
-  && chmod a+x /entrypoint.sh
+  && chmod a+x /run.sh
 
 VOLUME [ "/syntaxhighlighter/dist" ]
 
 WORKDIR "/syntaxhighlighter"
-ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "/run.sh" ]

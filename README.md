@@ -15,12 +15,21 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 ## Usage
 
-The following command will build all [official brushes and themes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) as well as custom ones from [assets](assets) folder :
+The default Docker command (`run.sh`) will build all [official brushes and themes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) as well as custom ones from [assets](assets) folder :
 
 ```bash
-$ docker run -it --name sxh --rm \
+$ docker run -it --rm \
   -v "$(pwd)/sxh:/syntaxhighlighter/dist" \
   crazymax/syntaxhighlighter:latest
+```
+
+You can also use the official [building instructions](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Building) commands to customize your build :
+
+```bash
+$ docker run -it --rm \
+  -v "$(pwd)/sxh:/syntaxhighlighter/dist" \
+  crazymax/syntaxhighlighter:latest
+  gulp --help
 ```
 
 ## Build
@@ -29,7 +38,7 @@ You can build this image yourself if you want for example include more custom br
 
 ```bash
 $ docker build -t sxh -f ./Dockerfile .
-$ docker run -it --name sxh --rm \
+$ docker run -it --rm \
   -v "$(pwd)/sxh:/syntaxhighlighter/dist" \
   sxh
 ```

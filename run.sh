@@ -50,5 +50,3 @@ done
 gulp build --brushes=${BRUSHES} --compat
 
 ls -al dist/
-
-exec "$@"
