@@ -23,7 +23,7 @@ $ docker run -it --rm \
   crazymax/syntaxhighlighter:latest
 ```
 
-You can also use the official [building instructions](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Building) commands to customize your build :
+You can also use the official [building instructions](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Building) commands with `gulp` to customize your build :
 
 ```bash
 $ docker run -it --rm \
