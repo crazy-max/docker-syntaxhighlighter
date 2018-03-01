@@ -38,7 +38,7 @@ install:
     -t $DOCKER_USERNAME/$DOCKER_REPONAME .
 
 script:
-  - docker run -it --rm --name $DOCKER_REPONAME -v "./sxh:/syntaxhighlighter/dist" $DOCKER_USERNAME/$DOCKER_REPONAME
+  - docker run -it --rm --name $DOCKER_REPONAME -v "$(pwd)/sxh:/syntaxhighlighter/dist" $DOCKER_USERNAME/$DOCKER_REPONAME
   - test -f ./sxh/syntaxhighlighter.js
 
 after_success:
