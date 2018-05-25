@@ -4,7 +4,6 @@
   <a href="https://hub.docker.com/r/crazymax/syntaxhighlighter/"><img src="https://img.shields.io/docker/stars/crazymax/syntaxhighlighter.svg?style=flat-square" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/syntaxhighlighter/"><img src="https://img.shields.io/docker/pulls/crazymax/syntaxhighlighter.svg?style=flat-square" alt="Docker Pulls"></a>
   <a href="https://quay.io/repository/crazymax/syntaxhighlighter"><img src="https://quay.io/repository/crazymax/syntaxhighlighter/status?style=flat-square" alt="Docker Repository on Quay"></a>
-  <a href="https://beerpay.io/crazy-max/docker-syntaxhighlighter"><img src="https://img.shields.io/beerpay/crazy-max/docker-syntaxhighlighter.svg?style=flat-square" alt="Beerpay"></a>
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T7JD54F4HVCNY"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
 </p>
 
@@ -15,7 +14,7 @@ If you are interested, [check out](https://hub.docker.com/r/crazymax/) my other 
 
 ## Usage
 
-The default Docker command (`run.sh`) will build all [official brushes and themes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) as well as custom ones from [assets](assets) folder :
+The default Docker command [run.sh](run.sh) will build all [official brushes and themes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) as well as custom ones from [assets](assets) folder :
 
 ```bash
 $ docker run -it --rm \
@@ -34,7 +33,7 @@ $ docker run -it --rm \
 
 ## Build
 
-You can build this image yourself if you want for example include more custom brushes / themes :
+You can build this image yourself if you want :
 
 ```bash
 $ docker build -t sxh -f ./Dockerfile .
@@ -49,8 +48,7 @@ All kinds of contributions are welcomed :raised_hands:!<br />
 The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon:<br />
 But we're not gonna lie to each other, I'd rather you buy me a beer or two :beers:!
 
-[![Beerpay](https://beerpay.io/crazy-max/docker-syntaxhighlighter/badge.svg?style=beer-square)](https://beerpay.io/crazy-max/docker-syntaxhighlighter)
-or [![Paypal](.res/paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T7JD54F4HVCNY)
+[![Paypal](.res/paypal.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T7JD54F4HVCNY)
 
 ## License
 
