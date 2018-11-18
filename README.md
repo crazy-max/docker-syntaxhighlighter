@@ -4,6 +4,7 @@
   <a href="https://hub.docker.com/r/crazymax/syntaxhighlighter/"><img src="https://img.shields.io/docker/stars/crazymax/syntaxhighlighter.svg?style=flat-square" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/syntaxhighlighter/"><img src="https://img.shields.io/docker/pulls/crazymax/syntaxhighlighter.svg?style=flat-square" alt="Docker Pulls"></a>
   <a href="https://quay.io/repository/crazymax/syntaxhighlighter"><img src="https://quay.io/repository/crazymax/syntaxhighlighter/status?style=flat-square" alt="Docker Repository on Quay"></a>
+  <a href="https://www.codacy.com/app/crazy-max/docker-syntaxhighlighter"><img src="https://img.shields.io/codacy/grade/922cb1922a4e408bbf20235d44865c74.svg?style=flat-square" alt="Code Quality"></a>
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T7JD54F4HVCNY"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
 </p>
 
