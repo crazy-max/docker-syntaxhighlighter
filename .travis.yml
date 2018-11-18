@@ -6,7 +6,6 @@ services:
 env:
   global:
     - VERSION=4.0.1
-    - GITHUB_REPO=crazy-max/docker-syntaxhighlighter
     - DOCKER_USERNAME=crazymax
     - DOCKER_REPONAME=syntaxhighlighter
     - QUAY_USERNAME=crazymax
@@ -14,7 +13,6 @@ env:
     - MICROBADGER_HOOK=https://hooks.microbadger.com/images/crazymax/syntaxhighlighter/7sFfYaLyUpfAsds-XUq0ymCEkcw=
     - secure: yJWt1eM731a3czRP6ADrEwIb0cAvlaKW+Bt0erpblJtch8yYaHEdzgHDsaQvbKMtL2ludAuXlEEdE7/kEZb1uBrODM7DBex11UlT/xO20EPweiW3y2h0+0Bj2POkp97lUjVpXCAgUcx6m/OD5IjFSAzItTq8V6qfrxCwSmsvdRthbATBTpJmjPHrbQ+LMhjkCCZIrwvimpp08FjI6eoBoNVY7KzOZe+rqnxn1+Fq+Zl6MeQvPMWMJl9Tak3NnvPJNMuntx0ugEYaEQl0NBifGq+hPFPoO61paJPK7B3NPwUndgDk4TkaysxhPnyWVdiWg8TwfgBtRINJq36sTZpoYahB5cIBaZkG8aMZdKzu0IR2PifjJefjljlCyHUL8WRv5sfJcILtMMCOuPftqpGSlJ3LMUuwW0zLkQ+XQnhbXVRFZ5MIg2rfq0xdm8gIVMGLlzV0SjejP90uvL+JJoeMMABmHbPCjQgqmf0cRyetBb+gh+G3/WnY0UXacivVhU3VLcGeqPzGSbUiB/W1rm03lCeu+ibNd71KFX3MCQTBQx/Bs4NDWb7FcGCBYLLObanYHm4wxoQ1/2r7wCXTadbwocEwzblDpSINyhRhGzRTrIupROhi2Iw06fNhBm6EDWsvs5nO56oTY3ovigpGwYG/hJt/ZLoCSAL4j79LR10RiQo= # DOCKER_PASSWORD
     - secure: xVkE14jTjk1Imf4VqeJeucUMlyIKuF3HD5Yn5uCe5XgFjbMRS4S86YVIY6cUFqUpX/vSQGAEkAX2u7GtfPnNj9Geq0hjY/KL0lvvgk+SSE2sRXnf2+6lGfd1cqA+SbVW9Xp4X4GDD8XHKjdC4tgErjErvlDUjjMpvhQIstXcHDuI2W3NgZKbJSC6Sl1hPFGFsEwm4yCAfBezuJgOJNdHhgt2CTFt/0Iz+Qu/7/iAnsX/0lMoL5ia2EJFCRQDpqoufXtwNcp8FbucbMIDRhOoMjhmClCFZzu56XzpRTrmCE006X+mApICIlUzQnn+y+bs5IFqwYa9j8cIizbcaJ4EOoiwKkKANccSj1gacRCvlsaAbAi1NgbULQXSjOuxP2pxkGNh6SQ2VdwtJQta7bFo+slHU1OJEulp5WMb2hn7M51MivtcNxsTpdPA5Wn299fn1xUIyEeptbHvs0woSweNGLEQhfav+ul9jrVWhv8m1KrWgdeMp97SQRcUigS3hDUuLgb5bAq0tXOT+UiyQhgVnZoRSkVhwbEyFqqQx0jwwsgCa1giApa5UMTYif6yrT7TMiCgbzQMu1nvgXKgvL09MAFP2309cwrWO9ZHTcHQTLiO1nXXcDthilvJcT01SHkNUYpSkPGtjX2w6qmTQgTMpsQpwZvHtGgwtRX3mPT2yx4= # QUAY_PASSWORD
-    - secure: gPGJ5KbOq4KrDHU/9Ml4IUJyF5XKOSV5NbpiXZ2YgztY9u6xfdA1dNYn/nmP1B1rBlXwetvaxslfdON5DOw2z8xfJ7un9RDcTHljbM6Hhexg3s5t9IazQZPppmtx5n6mB1GazgjU7KcyYB2FZzUzKRfmM5AFwrbvxQw0/Yg0+dEMdWzj7Ii5trKV8wB0GMbgIHlg18vhpr/Q9qisxHaP7ewhcESWktMVG43RwP7/K7qkUOJVQwhYhjWBY0X9q1VyMd/yOx1KRo3zZCXb6frzrxejlE+111nUDqq9iPv1oWN2oYi3B7VEJMGbJYe1U4xxHcvyFoocYI1VC4v8BONHQ6JB4lFkwBCQ2EvhBnwxO4if8sD2WdXosfMfvqDdmyPIRR9lOiV0b+JVm75M6w1OgHh6WA/ogWp5qZyKTL7ZQanMQIyVyfBM3/HPhYSKlaic+7P5iau73Togfr+m8uagmu9qtK81ZQpzWiHh7VY231gesMpOnjqqhUIA6gr3Q1SLrAvmhFzV8YOf9+TqLy8E0NwMl0qQgav8fpb2h6AsejsgOJeUQACAqOvZ6fbO4IgY5l8mgBsXbvsR9QZKO7ur/md5blz6SMDEzuS9PcN652Bkl+9yQNKtM0XpwGWNT41TlLoVzaDlTmXI+YYC6/NaQYzct9bwZ+kHTxsFi+cuu74= # GITHUB_TOKEN
 
 before_install:
   - sudo apt-get update
@@ -25,13 +23,6 @@ before_install:
 
 install:
   - |
-    docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-    --build-arg VCS_REF=${TRAVIS_COMMIT::8} \
-    --build-arg VERSION=${VERSION} \
-    -t docker_build .
-
-install:
-- |
     docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
     --build-arg VCS_REF=${TRAVIS_COMMIT::8} \
     --build-arg VERSION=${VERSION} \
