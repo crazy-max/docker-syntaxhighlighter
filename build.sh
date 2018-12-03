@@ -82,7 +82,7 @@ done < <(docker logs -f ${PROJECT} 2>&1)
 echo
 
 CONTAINER_STATUS=$(docker container inspect --format "{{.State.Status}} {{.State.ExitCode}}" ${PROJECT})
-if [[ ${CONTAINER_STATUS} != "exited 0" ]]; then
+if [[ ${CONTAINER_STATUS} != "exited 0" ]] && [[ ${CONTAINER_STATUS} != "running 0" ]]; then
   >&2 echo "ERROR: Container ${PROJECT} returned status $CONTAINER_STATUS"
   docker rm -f ${PROJECT} > /dev/null 2>&1 || true
   exit 1
