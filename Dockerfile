@@ -20,9 +20,13 @@ ENV COMMIT_ID="37724fdb55a4635798993d2d69667e499b62db4b"
 RUN node -v \
   && npm -v \
   && apk --update --no-cache add \
-    bzip2 git tar \
+    bzip2 \
+    git \
+    tar \
   && apk --update --no-cache add -t build-dependencies \
-    g++ make python \
+    g++ \
+    make \
+    python \
   && git clone https://github.com/syntaxhighlighter/syntaxhighlighter.git \
   && cd syntaxhighlighter \
   && git reset --hard $COMMIT_ID \
@@ -31,8 +35,8 @@ RUN node -v \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
-ADD run.sh /run.sh
-ADD assets /
+COPY run.sh /run.sh
+COPY assets /
 
 RUN cd syntaxhighlighter \
   && sed -i -e 's/.*Promise = global.Promise.*/Promise = require("bluebird");/' node_modules/songbird/lib/songbird.js \
@@ -41,5 +45,5 @@ RUN cd syntaxhighlighter \
 
 VOLUME [ "/syntaxhighlighter/dist" ]
 
-WORKDIR "/syntaxhighlighter"
+WORKDIR /syntaxhighlighter
 CMD [ "/run.sh" ]
