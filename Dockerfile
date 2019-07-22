@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:6.15.0-alpine
 
 ARG BUILD_DATE
 ARG VCS_REF
