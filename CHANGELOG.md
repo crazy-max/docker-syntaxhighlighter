@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.1-RC3 (2019/10/20)
+
+* Switch to GitHub Actions
+* :warning: Stop publishing Docker image on Quay
+
 ## 4.0.1-RC2 (2019/07/22)
 
 * Stick to Node 6.15.0 (Issue #2)
