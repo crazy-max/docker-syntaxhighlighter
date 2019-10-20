@@ -21,7 +21,7 @@ jobs:
           echo ::set-output name=build_tag::test
           echo ::set-output name=container_name::syntaxhighlighter
           echo ::set-output name=running_timeout::120
-          echo ::set-output name=running_log_check::theme-rdark.css
+          echo ::set-output name=running_log_check::theme-swift.css
       -
         name: Docker Build
         run: |
@@ -46,11 +46,3 @@ jobs:
               exit 1
             fi
           done < <(docker logs -f ${{ steps.prepare.outputs.container_name }} 2>&1)
-
-          CONTAINER_STATUS=$(docker container inspect --format "{{.State.Status}}" ${{ steps.prepare.outputs.container_name }})
-          if [[ ${CONTAINER_STATUS} != "running" ]]; then
-            >&2 echo "❌ Container ${{ steps.prepare.outputs.container_name }} returned status '$CONTAINER_STATUS'"
-            docker rm -f ${{ steps.prepare.outputs.container_name }} > /dev/null 2>&1 || true
-            exit 1
-          fi
-          docker rm -f ${{ steps.prepare.outputs.container_name }} > /dev/null 2>&1 || true
