@@ -21,7 +21,7 @@ jobs:
           echo ::set-output name=build_tag::test
           echo ::set-output name=container_name::syntaxhighlighter
           echo ::set-output name=running_timeout::120
-          echo ::set-output name=running_log_check::theme-swift.css
+          echo ::set-output name=running_log_check::theme-rdark.css
       -
         name: Docker Build
         run: |
