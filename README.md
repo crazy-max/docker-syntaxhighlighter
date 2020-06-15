@@ -8,7 +8,7 @@
   <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
 </p>
 
-# :warning: Archived project 
+## :warning: Archived project 
 
 This project is not maintained anymore and is archived. Feel free to fork and make your own changes if needed.
 
